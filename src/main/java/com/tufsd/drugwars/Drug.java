@@ -9,25 +9,27 @@ package com.tufsd.drugwars;
  */
 public enum Drug
 {
-    POT,
-    METH,
-    SPEED,
-    COKE,
-    HEROIN;
-
-
-    /*// instance variables - replace the example below with your own
-    public String name;
-    public double basePrice;
-    /**
-     * Constructor for objects of class Drug
-     * @param name      name of the drug
-     * @param basePrice the base price of the drug
-     *
-    public Drug(String name, double basePrice)
+    REEFER (10),
+    XANAX (15),
+    ADDERALL (12),
+    COKE (20),
+    HEROIN (8);
+    
+    double price;
+    
+    Drug(double price)
     {
-        // initialise instance variables
-        this.name = name;
-        this.basePrice = basePrice;
-    }*/
+        this.price = price;
+    }
+
+    public static String[] names() {
+        String[] names = new String[values().length];
+        int index = 0;
+
+        for (Drug drug : values()) {
+            names[index++] = drug.name();
+        }
+
+        return names;
+    }
 }
